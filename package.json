@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/AlzionLabs/questgpt-react.git"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -47,5 +47,6 @@
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.22.20"
-  }
+  },
+  "type": "module"
 }
