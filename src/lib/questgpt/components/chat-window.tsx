@@ -2,13 +2,21 @@ import { useState } from "react";
 import ChatBody from "./chat-body";
 import ChatFooter from "./chat-footer";
 import ChatHeader from "./chat-header";
+import { Message } from "./message";
+
+interface ChatWindowProps {
+  className?: string;
+  onClose: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  apiKey: string;
+  hideCredit?: boolean;
+}
 
 export default function ChatWindow({
   className,
   onClose,
   apiKey,
   hideCredit,
-}) {
+}: ChatWindowProps) {
 
   function firstMessage() {
     return {
@@ -18,9 +26,9 @@ export default function ChatWindow({
     };
   };
 
-  const [messages, setMessages] = useState([firstMessage()]);
+  const [messages, setMessages] = useState<Message[]>([firstMessage()]);
 
-  function addMessage(message) {
+  function addMessage(message: Message) {
     // NOTE: idk why this works the way it works.
     messages.push(message);
     setMessages([...messages]);

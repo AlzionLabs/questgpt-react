@@ -1,17 +1,23 @@
 import { useState } from "react";
 import ChatWindow from "./components/chat-window";
-import logo from "../assets/questgpt-logo-white.svg";
+import QuestGptLogoWhite from "../assets/questgpt-logo-white";
 import "./questgpt.css";
 
-export default function QuestGPT({
+interface QuestGptProps {
+  apiKey: string;
+  introText?: string;
+  hideCredit?: boolean;
+}
+
+const QuestGpt: React.FC<QuestGptProps> = ({
   apiKey,
   introText,
-  hideCredit,
-}) {
+  hideCredit = false,
+}) => {
   const [chatWindowOpen, setChatWindowOpen] = useState(false);
   const [chatWindowOpenedOnce, setChatWindowOpenedOnce] = useState(false);
 
-  function toggleChatWindow(e) {
+  function toggleChatWindow(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (typeof document !== "undefined") {
       chatWindowOpen
@@ -23,18 +29,15 @@ export default function QuestGPT({
   }
 
   return (
+
     <main className="qg-main-container">
       <div className="qg-toggle-container">
         <button
           className="qg-toggle"
           onClick={toggleChatWindow}
         >
-          <img
-            alt="QuestGPT"
+          <QuestGptLogoWhite
             className="qg-toggle-logo"
-            src={logo}
-            width={24}
-            height={24}
           />
         </button>
       </div>
@@ -54,5 +57,7 @@ export default function QuestGPT({
         className={chatWindowOpen ? "" : "qg-hidden"}
       />
     </main>
-  );
+  )
 }
+
+export default QuestGpt;

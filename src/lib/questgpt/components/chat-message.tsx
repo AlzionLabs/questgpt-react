@@ -1,23 +1,23 @@
 import Typing from "./typing";
-import logo from "../../assets/questgpt-logo-white.svg";
+import QuestGptLogoWhite from "../../assets/questgpt-logo-white";
+import { Message } from "./message";
 
-export default function ChatMessage({ message, key }) {
+interface ChatMessageProps {
+  message: Message;
+  key: number;
+}
+
+export default function ChatMessage({ message, key }: ChatMessageProps) {
   return (
     <div key={key} className="qg-message-container">
       {message.isBot && (
         <div className="qg-chat-bot-image-container">
-          <img
-            alt="QuestGPT"
-            className="qg-chat-bot-image"
-            src={logo}
-            width={24}
-            height={24}
-          />
+          <QuestGptLogoWhite className="qg-chat-bot-image-container" />
         </div>
       )}
       <div
         className={`qg-message-content ${
-          message.isBot ?"qg-message-text-bot" : "qg-message-text-user"
+          message.isBot ? "qg-message-text-bot" : "qg-message-text-user"
         }`}
       >
         <div

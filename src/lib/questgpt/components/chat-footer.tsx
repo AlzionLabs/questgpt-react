@@ -1,6 +1,15 @@
-import React from "react";
 import { useState } from "react";
 import { QuestGPT } from "questgpt-js";
+import { Message } from "./message";
+
+interface ChatFooterProps {
+  onSubmit: (message: Message) => void;
+  onAddLoader: () => void;
+  onRemoveLoader: () => void;
+  onResponse: (message: Message) => void;
+  apiKey: string;
+  hideCredit?: boolean;
+}
 
 export default function ChatFooter({
   onSubmit,
@@ -9,7 +18,7 @@ export default function ChatFooter({
   onResponse,
   apiKey,
   hideCredit = false,
-}) {
+}: ChatFooterProps) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [placeholder, setPlaceholder] = useState("Ask me a question...");

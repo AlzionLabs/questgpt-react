@@ -1,4 +1,9 @@
-export default function ChatHeader({ onClose, onReset }) {
+interface ChatHeaderProps {
+  onClose: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onReset: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export default function ChatHeader({ onClose, onReset }: ChatHeaderProps) {
   return (
     <div className="qg-chat-header">
       <p className="qg-chat-header-title">QuestGPT Bot</p>
