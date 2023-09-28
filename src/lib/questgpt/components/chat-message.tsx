@@ -12,7 +12,7 @@ export default function ChatMessage({ message, key }: ChatMessageProps) {
     <div key={key} className="qg-message-container">
       {message.isBot && (
         <div className="qg-chat-bot-image-container">
-          <QuestGptLogoWhite className="qg-chat-bot-image-container" />
+          <QuestGptLogoWhite className="qg-chat-bot-image" />
         </div>
       )}
       <div
