@@ -45,8 +45,7 @@ const QuestGpt: React.FC<QuestGptProps> = ({
         introText.length > 0 &&
         !chatWindowOpen &&
         !chatWindowOpenedOnce && (
-          <div className="flex-grow-0 flex-shrink-0 flex flex-col justify-center items-center bg-primary-500 text-white text-sm rounded-md px-3 py-2 mr-4 relative rounded-br-none">
-            <div className="h-2 w-2 border-t-[8px] border-l-[8px] border-r-none border-l-transparent border-r-transparent border-t-primary-500 absolute top-[100%] right-0"></div>
+          <div className="intro-text">
             {introText}
           </div>
         )}
