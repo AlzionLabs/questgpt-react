@@ -306,8 +306,8 @@
 }
 
 .intro-text::before {
-  height: 8px;
-  width: 8px;
+  height: 0;
+  width: 0;
   border-top: 8px solid var(--questgpt-primary-500);
   border-left: 8px solid transparent;
   content: "";
