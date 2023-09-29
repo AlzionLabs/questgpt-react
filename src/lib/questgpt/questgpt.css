@@ -229,13 +229,14 @@
 
 .qg-chat-input:focus {
   border-color: var(--questgpt-primary-500);
+  box-shadow: none;
 }
 
 .qg-chat-submit {
   background: var(--questgpt-primary-500);
   position: absolute;
   top: 3px;
-  right: 0.125rem;
+  right: 3px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
